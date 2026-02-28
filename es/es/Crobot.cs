@@ -11,26 +11,27 @@ namespace es
         SemaphoreSlim sem_robot;
         SemaphoreSlim sem_dino;
         Cqueue<string> cqueue;
-        int nmat;
 
         public Crobot(SemaphoreSlim sem_robot, SemaphoreSlim sem_dino, Cqueue<string> cqueue)
         {
             this.sem_robot = sem_robot;
             this.sem_dino = sem_dino;
             this.cqueue = cqueue;
-            int nmat = 0;
         }
 
         private async Task entra()
         {
-            sem_robot.WaitAsync();
+            await sem_robot.WaitAsync();
         }
 
         public async Task fai()
         {
-            entra();
-            cqueue.enqueue($"materiale {nmat}");
-            sem_dino.Release();
+            for (int i = 0; i < 5; i++)
+            {
+                await entra();
+                cqueue.enqueue($"materiale {i}");
+                sem_dino.Release();
+            }
         }
     }
 }

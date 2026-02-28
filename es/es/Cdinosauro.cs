@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using es;
+using static System.Console;
 
 namespace es
 {
@@ -24,15 +25,19 @@ namespace es
 
         private async Task entra()
         {
-            sem_dino.WaitAsync();
+            await sem_dino.WaitAsync();
         }
 
         public async Task run()
         {
-            entra();
-            string materiale = cqueue.dequeue();
-            cstack.push(materiale);
-            sem_robot.Release();
+            for (int i = 0; i < 5; i++)
+            {
+                await entra();
+                string materiale = cqueue.dequeue();
+                cstack.push(materiale);
+                WriteLine($"il {materiale} viene spostato nello stack");
+                sem_robot.Release();
+            }
         }
     }
 }

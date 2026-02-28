@@ -10,7 +10,7 @@ namespace es
             Cqueue<string> queue = new Cqueue<string>();
             Cstack<string> stack = new Cstack<string>();
             SemaphoreSlim sem_robot = new SemaphoreSlim(1, 1);
-            SemaphoreSlim sem_dino = new SemaphoreSlim(0, 1);
+            SemaphoreSlim sem_dino = new SemaphoreSlim(0);
 
             Crobot robot = new Crobot(sem_robot, sem_dino, queue);
             Cdinosauro dino = new Cdinosauro(sem_robot, sem_dino, stack, queue);
