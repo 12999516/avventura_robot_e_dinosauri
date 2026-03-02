@@ -32,9 +32,10 @@
               "RelativeDocumentMoniker": "es\\Crobot.cs",
               "ToolTip": "C:\\Users\\sebas\\Desktop\\dino_e_robot\\avventura_robot_e_dinosauri\\es\\es\\Crobot.cs",
               "RelativeToolTip": "es\\Crobot.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAASwCoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T18:38:11.624Z"
+              "WhenOpened": "2026-02-27T18:38:11.624Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -44,7 +45,7 @@
               "RelativeDocumentMoniker": "es\\Cdinosauro.cs",
               "ToolTip": "C:\\Users\\sebas\\Desktop\\dino_e_robot\\avventura_robot_e_dinosauri\\es\\es\\Cdinosauro.cs",
               "RelativeToolTip": "es\\Cdinosauro.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAAACUAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAawDIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T18:36:42.482Z",
               "EditorCaption": ""
@@ -57,9 +58,10 @@
               "RelativeDocumentMoniker": "es\\Program.cs",
               "ToolTip": "C:\\Users\\sebas\\Desktop\\dino_e_robot\\avventura_robot_e_dinosauri\\es\\es\\Program.cs",
               "RelativeToolTip": "es\\Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAlwAwAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAwwDcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T18:31:07.158Z"
+              "WhenOpened": "2026-02-27T18:31:07.158Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -11,26 +11,45 @@ namespace es
         SemaphoreSlim sem_robot;
         SemaphoreSlim sem_dino;
         Cqueue<string> cqueue;
+        CancellationToken cancellationToken;
+        SemaphoreSlim mutex_robot;
+        static int id = 0;
+        int id_robot;
 
-        public Crobot(SemaphoreSlim sem_robot, SemaphoreSlim sem_dino, Cqueue<string> cqueue)
+        public Crobot(SemaphoreSlim sem_robot, SemaphoreSlim sem_dino, Cqueue<string> cqueue, CancellationToken cancellationToken, SemaphoreSlim mutex_robot)
         {
             this.sem_robot = sem_robot;
             this.sem_dino = sem_dino;
             this.cqueue = cqueue;
+            this.cancellationToken = cancellationToken;
+            this.mutex_robot = mutex_robot;
+            id++;
+            id_robot = id;
         }
 
         private async Task entra()
         {
-            await sem_robot.WaitAsync();
+            await sem_robot.WaitAsync(cancellationToken);
         }
 
         public async Task fai()
         {
-            for (int i = 0; i < 5; i++)
+            int cont = 0;
+            while (true)
             {
-                await entra();
-                cqueue.enqueue($"materiale {i}");
-                sem_dino.Release();
+                try
+                {
+                    await entra();
+                    await mutex_robot.WaitAsync(cancellationToken);
+                    cqueue.enqueue($"materiale {cont} viene messo nella coda dal robot {id_robot}");
+                    cont++;
+                    mutex_robot.Release();
+                    sem_dino.Release();
+                }
+                catch(Exception ex)
+                {
+
+                }
             }
         }
     }
