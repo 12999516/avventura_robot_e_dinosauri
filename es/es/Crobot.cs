@@ -35,12 +35,14 @@ namespace es
         public async Task fai()
         {
             int cont = 0;
+            Random rdn = new Random();
             while (true)
             {
                 try
                 {
                     await entra();
                     await mutex_robot.WaitAsync(cancellationToken);
+                    rdn.Next(1, 251);
                     cqueue.enqueue($"materiale {cont} viene messo nella coda dal robot {id_robot}");
                     cont++;
                     mutex_robot.Release();
