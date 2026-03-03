@@ -57,12 +57,11 @@ namespace es
                 {
                     cancellationToken_robot.Cancel();
                     cancellationtoken_dino.Cancel();
-                    break;
+                    await Task.WhenAll(tasks);
+                    WriteLine("Fine programma");
+                    return;
                 }
             }
-
-            await Task.WhenAll(tasks);
-            WriteLine("Fine programma");
         }
     }
 }
